@@ -47,7 +47,7 @@ items.appendChild(li)
 //DeleteItem
 function deleteItem(e){
 if(e.target.classList.contains('delete')){
-    if(confirm('Are you Sure??'))
+    if(confirm('Are you Sure??')){
         // console.log(e.target);
         items.removeChild(e.target.parentElement); 
           //we want to delete the whole item list, not just the
