@@ -1,12 +1,22 @@
+//DECLARATIONS
 var form = document.getElementById('add-form');
 var items = document.getElementById('items');
 
-// Events 
+// ----------------------------------------------------
+
+// EVENTS
+
+//add item
 form.addEventListener('submit', addItem);
+//remove item
+items.addEventListener('click',deleteItem);
+
+// -----------------------------------------------------------
 
 
+//FUNCTIONS
 
-//Add Item function
+//Add Item 
 function addItem(e){
     e.preventDefault();
 
@@ -32,3 +42,17 @@ li.appendChild(deleteBtn);
 items.appendChild(li)
 
 }
+
+
+//DeleteItem
+function deleteItem(e){
+if(e.target.classList.contains('delete')){
+    if(confirm('Are you Sure??'))
+        // console.log(e.target);
+        items.removeChild(e.target.parentElement); 
+          //we want to delete the whole item list, not just the
+          //button, hence targetting the parentelement of button,
+          //ie the list 
+       }
+    }
+ }
